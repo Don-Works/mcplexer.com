@@ -353,7 +353,8 @@ export default function HomePage() {
             {headlineFeatures.map(({ icon: Icon, label, title, body }) => (
               <article
                 key={title}
-                className="border border-border bg-surface p-5 transition-colors hover:border-border-hover"
+                id={label === "Workspaces" ? "workspaces" : undefined}
+                className="scroll-mt-24 border border-border bg-surface p-5 transition-colors hover:border-border-hover"
               >
                 <div className="mb-4 flex items-start gap-3">
                   <span className="flex h-9 w-9 shrink-0 items-center justify-center border border-cyan/20 bg-cyan/10 text-cyan">
