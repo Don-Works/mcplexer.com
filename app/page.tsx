@@ -432,11 +432,23 @@ export default function HomePage() {
               <article key={group} className="border border-border bg-surface p-6">
                 <h3 className="text-sm font-semibold text-text">{group}</h3>
                 <div className="mt-4 flex flex-wrap gap-2">
-                  {items.map((item) => (
-                    <span key={item} className="border border-cyan/20 bg-cyan/5 px-2.5 py-1 text-xs text-cyan">
-                      {item}
-                    </span>
-                  ))}
+                  {items.map((item) =>
+                    item === "brw" ? (
+                      <a
+                        key={item}
+                        href="https://github.com/Don-Works/brw"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="border border-cyan/20 bg-cyan/5 px-2.5 py-1 text-xs text-cyan transition-colors hover:border-[#ff2ec4]/50 hover:text-[#ff2ec4]"
+                      >
+                        {item}
+                      </a>
+                    ) : (
+                      <span key={item} className="border border-cyan/20 bg-cyan/5 px-2.5 py-1 text-xs text-cyan">
+                        {item}
+                      </span>
+                    ),
+                  )}
                 </div>
               </article>
             ))}
@@ -493,10 +505,10 @@ export default function HomePage() {
             ))}
           </div>
           <Link
-            href="/blog/mcp-stdio-rce-mitigations"
+            href="/blog"
             className="mt-8 inline-flex items-center gap-2 border border-cyan/30 px-5 py-2.5 text-sm text-cyan hover:bg-cyan/5"
           >
-            Read the MCP STDIO RCE mitigation note
+            Read our security and design notes
             <ArrowRight className="h-4 w-4" />
           </Link>
         </div>

@@ -63,12 +63,28 @@ export function Footer() {
                 Project
               </span>
               <Link
-                href={config.githubOrgUrl}
+                href="https://donworks.co.uk"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-text-dim hover:text-text transition-colors"
               >
                 Don Works
+              </Link>
+              <Link
+                href="https://revitt.co"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-text-dim hover:text-text transition-colors"
+              >
+                Revitt
+              </Link>
+              <Link
+                href={config.githubOrgUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-text-dim hover:text-text transition-colors"
+              >
+                Don Works on GitHub
               </Link>
               <Link
                 href={config.githubUrl}
@@ -86,14 +102,22 @@ export function Footer() {
         <div className="mt-8 pt-6 border-t border-border flex flex-col sm:flex-row items-center justify-between gap-3 text-[10px] text-text-dim">
           <span>&copy; 2026 Don Works. All rights reserved.</span>
           <span>
-            Built and supported by{" "}
             <Link
-              href={config.githubOrgUrl}
+              href="https://donworks.co.uk"
               target="_blank"
               rel="noopener noreferrer"
               className="text-cyan hover:text-cyan-light transition-colors"
             >
               Don Works
+            </Link>{" "}
+            — made by{" "}
+            <Link
+              href="https://revitt.co"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-cyan hover:text-cyan-light transition-colors"
+            >
+              Revitt
             </Link>
           </span>
         </div>
