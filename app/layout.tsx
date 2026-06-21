@@ -36,11 +36,20 @@ export const metadata: Metadata = {
     url: SITE_URL,
     siteName: config.name,
     locale: "en_GB",
+    images: [
+      {
+        url: "/og.png",
+        width: 1600,
+        height: 900,
+        alt: `${config.name} — ${config.tagline}`,
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: `${config.name} — ${config.tagline}`,
     description: config.description,
+    images: ["/og.png"],
   },
   robots: {
     index: true,
@@ -52,9 +61,6 @@ export const metadata: Metadata = {
       "max-image-preview": "large",
       "max-video-preview": -1,
     },
-  },
-  icons: {
-    icon: "/icon.svg",
   },
 };
 
