@@ -1,4 +1,4 @@
-// Regenerates every raster brand asset from violet (#a06cff) dot-peen sources.
+// Regenerates every raster brand asset from electric-blue (#3b82f6) dot-peen sources.
 // Run: node scripts/gen-brand-assets.mjs   (from mcplexer.com/)
 //
 // Sources of truth:
@@ -14,14 +14,14 @@ import { dirname, join } from "node:path";
 const root = join(dirname(fileURLToPath(import.meta.url)), "..");
 const p = (...s) => join(root, ...s);
 
-const VIOLET = "#a06cff";
+const BLUE = "#3b82f6";
 const CYAN = "#19e6ff";
 const RED = "#ff3147";
-const BG = "#0a0810";
-const TILE = "#14101e";
+const BG = "#0a0b10";
+const TILE = "#11141d";
 
-// ── the routing/mux glyph, on a violet-dark tile (matches app/icon.svg) ──
-const glyph = (stroke = VIOLET) => `
+// ── the routing/mux glyph, on a blue-dark tile (matches app/icon.svg) ──
+const glyph = (stroke = BLUE) => `
   <g transform="translate(58.03,58.03) scale(12.3733)">
     <g fill="none" stroke="${stroke}" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
       <path d="M4 8H9L16 16"/><path d="M4 16H16"/><path d="M4 24H9L16 16"/><path d="M16 16H28"/>
@@ -31,7 +31,7 @@ const glyph = (stroke = VIOLET) => `
 
 const iconSvg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
   <rect width="512" height="512" rx="92.2" fill="${TILE}"/>
-  <rect x="8" y="8" width="496" height="496" rx="86" fill="none" stroke="${VIOLET}" stroke-opacity="0.35" stroke-width="4"/>
+  <rect x="8" y="8" width="496" height="496" rx="86" fill="none" stroke="${BLUE}" stroke-opacity="0.35" stroke-width="4"/>
   ${glyph()}
 </svg>`;
 
@@ -81,10 +81,10 @@ function buildDots(lines, p) {
 
 function ogSvg() {
   const W = 1600, H = 900;
-  const pitch = 24;
-  const { dots, width, height, r } = buildDots(["MCP", "LEXER"], pitch);
+  const pitch = 28;
+  const { dots, width, height, r } = buildDots(["MCPLEXER"], pitch);
   const ox = (W - width) / 2;
-  const oy = 132;
+  const oy = 222;
   const layer = (fill, dx, dy, op) =>
     `<g fill="${fill}" opacity="${op}" transform="translate(${(ox + dx).toFixed(2)},${(oy + dy).toFixed(2)})">` +
     dots.map((d) => `<circle cx="${d.cx}" cy="${d.cy}" r="${r.toFixed(2)}"/>`).join("") +
@@ -96,16 +96,16 @@ function ogSvg() {
   const taglineY = oy + height + 86;
   return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${W} ${H}" width="${W}" height="${H}">
     <defs><radialGradient id="g" cx="28%" cy="34%" r="62%">
-      <stop offset="0%" stop-color="${VIOLET}" stop-opacity="0.20"/>
-      <stop offset="70%" stop-color="${VIOLET}" stop-opacity="0"/>
+      <stop offset="0%" stop-color="${BLUE}" stop-opacity="0.20"/>
+      <stop offset="70%" stop-color="${BLUE}" stop-opacity="0"/>
     </radialGradient></defs>
     <rect width="${W}" height="${H}" fill="${BG}"/>
     <g opacity="0.5">${grid}</g>
     <rect width="${W}" height="${H}" fill="url(#g)"/>
     ${layer(CYAN, -8, 3, 0.55)}
     ${layer(RED, 8, -3, 0.45)}
-    ${layer(VIOLET, 0, 0, 1)}
-    <rect x="${(W / 2 - 70).toFixed(0)}" y="${(taglineY - 44).toFixed(0)}" width="140" height="5" fill="${VIOLET}"/>
+    ${layer(BLUE, 0, 0, 1)}
+    <rect x="${(W / 2 - 70).toFixed(0)}" y="${(taglineY - 44).toFixed(0)}" width="140" height="5" fill="${BLUE}"/>
     <text x="${W / 2}" y="${taglineY}" text-anchor="middle" font-family="ui-monospace,monospace" font-size="40" font-weight="800" fill="#e7e3f2" letter-spacing="2">Cross-Harness AI Runtime</text>
     <text x="${W / 2}" y="${(H - 70).toFixed(0)}" text-anchor="middle" font-family="ui-monospace,monospace" font-size="24" letter-spacing="3" fill="#9b93b3">mcplexer.com  ·  open source by Revitt  ·  AGPL-3.0</text>
   </svg>`;

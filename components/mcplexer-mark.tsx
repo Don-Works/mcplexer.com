@@ -1,5 +1,5 @@
 // Dot-peen wordmark — 5x7 pin-stamp dot matrix rendered as an SVG, the same
-// system DonWorks (lime) and brw (magenta) use. mcplexer's base is violet; the
+// system DonWorks (lime) and brw (magenta) use. mcplexer's base is blue; the
 // RGB-split glitch (cyan + red ghost layers) is driven entirely by CSS in
 // globals.css, so this stays a server component with no client JS.
 
@@ -79,8 +79,8 @@ type McplexerMarkProps = {
 };
 
 export function McplexerMark({
-  lines = ["MCP", "LEXER"],
-  color = "var(--color-violet)",
+  lines = ["MCPLEXER"],
+  color = "var(--color-blue)",
   ghostA = "var(--color-cyan)",
   ghostB = "var(--color-red)",
   pitch = 12,

@@ -262,8 +262,8 @@ export default function HomePage() {
         <div className="scanlines pointer-events-none absolute inset-0" />
 
         <div className="relative z-10 mx-auto flex w-full max-w-4xl flex-col items-center text-center">
-          <p className="mb-8 inline-flex items-center gap-3 text-[11px] font-semibold uppercase tracking-[0.18em] text-violet-light">
-            <span className="h-px w-9 bg-violet shadow-[0_0_18px_var(--color-violet)]" />
+          <p className="mb-8 inline-flex items-center gap-3 text-[11px] font-semibold uppercase tracking-[0.18em] text-blue-light">
+            <span className="h-px w-9 bg-blue shadow-[0_0_18px_var(--color-blue)]" />
             open source · cross-harness AI runtime
           </p>
 
@@ -293,16 +293,16 @@ export default function HomePage() {
             </Link>
             <a
               href="#features"
-              className="inline-flex w-full items-center justify-center border border-violet/70 px-8 py-4 text-sm font-semibold text-violet-light shadow-[0_0_14px_rgba(160,108,255,0.22)] transition-colors hover:border-violet-light hover:text-text sm:w-auto"
+              className="inline-flex w-full items-center justify-center border border-blue/70 px-8 py-4 text-sm font-semibold text-blue-light shadow-[0_0_14px_rgba(59,130,246,0.22)] transition-colors hover:border-blue-light hover:text-text sm:w-auto"
             >
               See features
             </a>
           </div>
 
           <p className="mt-10 font-mono text-xs text-text-dim">
-            <span className="text-violet">$</span> one slim surface ·{" "}
-            <span className="text-violet-light">mcpx__search_tools</span> +{" "}
-            <span className="text-violet-light">mcpx__execute_code</span> + secret refs
+            <span className="text-blue">$</span> one slim surface ·{" "}
+            <span className="text-blue-light">mcpx__search_tools</span> +{" "}
+            <span className="text-blue-light">mcpx__execute_code</span> + secret refs
           </p>
         </div>
       </section>
@@ -311,12 +311,12 @@ export default function HomePage() {
         <div className="mx-auto max-w-6xl px-4 py-5 sm:px-6">
           <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center sm:justify-center sm:gap-x-6 sm:gap-y-2">
             <span className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-green">
-              <span className="h-2 w-2 rounded-full bg-green animate-pulse-violet" />
+              <span className="h-2 w-2 rounded-full bg-green animate-pulse-blue" />
               live
             </span>
             {statusItems.map((item) => (
               <span key={item} className="flex items-center gap-2 text-xs text-text-muted">
-                <CheckCircle2 className="h-3.5 w-3.5 shrink-0 text-violet" />
+                <CheckCircle2 className="h-3.5 w-3.5 shrink-0 text-blue" />
                 {item}
               </span>
             ))}
@@ -326,14 +326,14 @@ export default function HomePage() {
 
       <section className="border-b border-border bg-bg-alt">
         <div className="mx-auto max-w-6xl px-4 py-8 sm:px-6">
-          <p className="mb-4 text-center text-sm font-semibold text-violet">
+          <p className="mb-4 text-center text-sm font-semibold text-blue">
             Built for the harnesses and tools agents actually use
           </p>
           <ul className="flex flex-wrap items-center justify-center gap-2" aria-label="Supported surfaces">
             {capabilityChips.map((chip) => (
               <li
                 key={chip}
-                className="border border-violet/30 bg-surface-elevated px-3 py-1.5 text-xs font-semibold text-text"
+                className="border border-blue/30 bg-surface-elevated px-3 py-1.5 text-xs font-semibold text-text"
               >
                 {chip}
               </li>
@@ -344,7 +344,7 @@ export default function HomePage() {
 
       <section id="features" className="py-20 sm:py-28">
         <div className="mx-auto max-w-6xl px-4 sm:px-6">
-          <p className="text-sm font-semibold text-violet">Full feature list</p>
+          <p className="text-sm font-semibold text-blue">Full feature list</p>
           <h2 className="mt-3 text-2xl font-bold sm:text-3xl">
             One runtime for the whole agent operating model.
           </h2>
@@ -362,7 +362,7 @@ export default function HomePage() {
                 className="scroll-mt-24 border border-border bg-surface p-5 transition-colors hover:border-border-hover"
               >
                 <div className="mb-4 flex items-start gap-3">
-                  <span className="flex h-9 w-9 shrink-0 items-center justify-center border border-violet/20 bg-violet/10 text-violet">
+                  <span className="flex h-9 w-9 shrink-0 items-center justify-center border border-blue/20 bg-blue/10 text-blue">
                     <Icon className="h-4 w-4" />
                   </span>
                   <div>
@@ -397,7 +397,7 @@ export default function HomePage() {
         <div className="mx-auto max-w-6xl px-4 sm:px-6">
           <div className="grid grid-cols-1 gap-8 lg:grid-cols-[0.85fr_1.15fr]">
             <div>
-              <p className="text-sm font-semibold text-violet">Browser control</p>
+              <p className="text-sm font-semibold text-blue">Browser control</p>
               <h2 className="mt-3 text-2xl font-bold sm:text-3xl">
                 Beats Claude Chrome because it is a shared runtime capability.
               </h2>
@@ -412,7 +412,7 @@ export default function HomePage() {
               <ul className="space-y-3">
                 {browserWins.map((win) => (
                   <li key={win} className="flex items-start gap-3 text-sm text-text-muted">
-                    <MousePointerClick className="mt-0.5 h-4 w-4 shrink-0 text-violet" />
+                    <MousePointerClick className="mt-0.5 h-4 w-4 shrink-0 text-blue" />
                     <span>{win}</span>
                   </li>
                 ))}
@@ -424,7 +424,7 @@ export default function HomePage() {
 
       <section id="servers" className="border-y border-border bg-bg-alt py-20 sm:py-28">
         <div className="mx-auto max-w-6xl px-4 sm:px-6">
-          <p className="text-sm font-semibold text-violet">MCP server fabric</p>
+          <p className="text-sm font-semibold text-blue">MCP server fabric</p>
           <h2 className="mt-3 text-2xl font-bold sm:text-3xl">
             Wire up broad capability without flooding every context.
           </h2>
@@ -445,12 +445,12 @@ export default function HomePage() {
                         href="https://github.com/Don-Works/brw"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="border border-violet/20 bg-violet/5 px-2.5 py-1 text-xs text-violet transition-colors hover:border-[#ff2ec4]/50 hover:text-[#ff2ec4]"
+                        className="border border-blue/20 bg-blue/5 px-2.5 py-1 text-xs text-blue transition-colors hover:border-[#ff2ec4]/50 hover:text-[#ff2ec4]"
                       >
                         {item}
                       </a>
                     ) : (
-                      <span key={item} className="border border-violet/20 bg-violet/5 px-2.5 py-1 text-xs text-violet">
+                      <span key={item} className="border border-blue/20 bg-blue/5 px-2.5 py-1 text-xs text-blue">
                         {item}
                       </span>
                     ),
@@ -464,23 +464,23 @@ export default function HomePage() {
 
       <section id="configure-with-ai" className="py-20 sm:py-28">
         <div className="mx-auto max-w-5xl px-4 sm:px-6">
-          <p className="text-sm font-semibold text-violet">AI-native setup</p>
+          <p className="text-sm font-semibold text-blue">AI-native setup</p>
           <h2 className="mt-3 text-2xl font-bold sm:text-3xl">
             Configure it by talking to your agent.
           </h2>
           <p className="mt-4 max-w-3xl text-sm leading-relaxed text-text-muted">
-            Inside <code className="border border-violet/10 bg-violet/5 px-1.5 py-0.5 text-xs text-violet">~/.mcplexer</code>,
+            Inside <code className="border border-blue/10 bg-blue/5 px-1.5 py-0.5 text-xs text-blue">~/.mcplexer</code>,
             the agent can provision servers, import OpenAPI specs, write
             routes, set auth scopes, inspect audit, and manage approvals.
             In ordinary project repos, it only sees the slim universal surface.
           </p>
           <div className="mt-8 border border-border bg-surface p-6">
             <div className="mb-4 flex items-center gap-2">
-              <Terminal className="h-4 w-4 text-violet" />
+              <Terminal className="h-4 w-4 text-blue" />
               <p className="text-xs text-text-muted">example prompt</p>
             </div>
             <p className="text-sm leading-relaxed text-text">
-              <span className="text-violet">&gt;</span> Wire GitHub, Linear,
+              <span className="text-blue">&gt;</span> Wire GitHub, Linear,
               Gmail, Calendar, Postgres, browser control, and a cheap worker
               model into this workspace. Require approval for write tools and
               give Codex the same surface Claude Code gets.
@@ -491,7 +491,7 @@ export default function HomePage() {
 
       <section id="security" className="border-y border-border bg-surface-elevated py-20 sm:py-28">
         <div className="mx-auto max-w-6xl px-4 sm:px-6">
-          <p className="text-sm font-semibold text-violet">Power with boundaries</p>
+          <p className="text-sm font-semibold text-blue">Power with boundaries</p>
           <h2 className="mt-3 text-2xl font-bold sm:text-3xl">
             Serious agents need serious constraints.
           </h2>
@@ -512,7 +512,7 @@ export default function HomePage() {
           </div>
           <Link
             href="/blog"
-            className="mt-8 inline-flex items-center gap-2 border border-violet/30 px-5 py-2.5 text-sm text-violet hover:bg-violet/5"
+            className="mt-8 inline-flex items-center gap-2 border border-blue/30 px-5 py-2.5 text-sm text-blue hover:bg-blue/5"
           >
             Read our security and design notes
             <ArrowRight className="h-4 w-4" />
@@ -522,7 +522,7 @@ export default function HomePage() {
 
       <section className="py-20 sm:py-28">
         <div className="mx-auto max-w-6xl px-4 sm:px-6">
-          <div className="border border-border bg-surface-elevated p-10 text-center shadow-[0_0_30px_rgba(160,108,255,0.12)] sm:p-16">
+          <div className="border border-border bg-surface-elevated p-10 text-center shadow-[0_0_30px_rgba(59,130,246,0.12)] sm:p-16">
             <h2 className="text-2xl font-bold sm:text-3xl">
               Build agent systems that continue across tools, models, and machines.
             </h2>
@@ -535,13 +535,13 @@ export default function HomePage() {
                 href={config.githubUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-violet px-6 py-3 text-sm font-medium text-bg hover:bg-violet-light"
+                className="bg-blue px-6 py-3 text-sm font-medium text-bg hover:bg-blue-light"
               >
                 View source
               </Link>
               <Link
                 href="/llms.txt"
-                className="inline-flex items-center gap-2 border border-violet/30 px-6 py-3 text-sm font-medium text-violet hover:bg-violet/5"
+                className="inline-flex items-center gap-2 border border-blue/30 px-6 py-3 text-sm font-medium text-blue hover:bg-blue/5"
               >
                 LLM index
                 <FileSearch className="h-4 w-4" />

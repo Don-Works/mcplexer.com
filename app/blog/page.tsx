@@ -62,7 +62,7 @@ export default function BlogIndexPage() {
           <p className="text-xs font-mono uppercase tracking-wider text-text-muted mb-3">
             <Link
               href="/"
-              className="hover:text-violet transition-colors"
+              className="hover:text-blue transition-colors"
             >
               Home
             </Link>{" "}
@@ -76,7 +76,7 @@ export default function BlogIndexPage() {
             for the machines that read this in your stead — every post has a{" "}
             <Link
               href="/llms.txt"
-              className="text-violet hover:text-violet-light transition-colors"
+              className="text-blue hover:text-blue-light transition-colors"
             >
               plain-text mirror
             </Link>
@@ -89,7 +89,7 @@ export default function BlogIndexPage() {
             <li key={post.slug}>
               <Link
                 href={`/blog/${post.slug}`}
-                className="group block bg-surface border border-border p-6 hover:border-violet/40 transition-colors"
+                className="group block bg-surface border border-border p-6 hover:border-blue/40 transition-colors"
               >
                 <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-[10px] font-mono uppercase tracking-wider text-text-muted mb-3">
                   <span className="inline-flex items-center gap-1.5">
@@ -109,13 +109,13 @@ export default function BlogIndexPage() {
                     </span>
                   )}
                 </div>
-                <h2 className="text-xl font-bold tracking-tight mb-2 group-hover:text-violet transition-colors">
+                <h2 className="text-xl font-bold tracking-tight mb-2 group-hover:text-blue transition-colors">
                   {post.title}
                 </h2>
                 <p className="text-sm text-text-muted leading-relaxed mb-4">
                   {post.excerpt}
                 </p>
-                <span className="inline-flex items-center gap-1.5 text-xs text-violet group-hover:text-violet-light transition-colors">
+                <span className="inline-flex items-center gap-1.5 text-xs text-blue group-hover:text-blue-light transition-colors">
                   Read post
                   <ArrowRight className="w-3 h-3 transition-transform group-hover:translate-x-0.5" />
                 </span>

@@ -1,23 +1,24 @@
 @import "tailwindcss";
 
 @theme {
-  --color-bg: #0a0810;
-  --color-bg-alt: #07060c;
-  --color-surface: #14101e;
-  --color-surface-hover: #1a1528;
-  --color-surface-elevated: #1e1830;
-  --color-border: #251f3a;
-  --color-border-hover: #3a2f5c;
+  --color-bg: #0a0b10;
+  --color-bg-alt: #07080c;
+  --color-surface: #12131a;
+  --color-surface-hover: #1a1b24;
+  --color-surface-elevated: #1e1f2a;
+  --color-border: #1e2030;
+  --color-border-hover: #2a2d42;
 
-  --color-text: #e7e3f2;
-  --color-text-muted: #9b93b3;
-  --color-text-dim: #645c7e;
+  --color-text: #e0e4ef;
+  --color-text-muted: #8b90a0;
+  --color-text-dim: #5a5f72;
 
-  /* mcplexer brand — violet (~275° on the dot-peen family wheel:
-     DonWorks lime ~75°, brw cyan ~190°, mcplexer violet ~275°) */
-  --color-violet: #a06cff;
-  --color-violet-light: #c0a0ff;
-  --color-violet-dark: #7d4fe0;
+  /* mcplexer brand — electric blue #3b82f6 (~217° on the colour wheel;
+     DonWorks lime ~75°, brw magenta ~315°, mcplexer blue ~217° — a
+     distinct cyan/magenta/lime-style trio across the family) */
+  --color-blue: #3b82f6;
+  --color-blue-light: #60a5fa;
+  --color-blue-dark: #2563eb;
 
   /* shared dot-peen glitch ghosts (cyan + red), same family as brw / DonWorks */
   --color-cyan: #19e6ff;
@@ -46,23 +47,23 @@ body {
 }
 
 ::selection {
-  background: var(--color-violet);
+  background: var(--color-blue);
   color: var(--color-bg);
 }
 
 /* Glow utility */
-.glow-violet {
-  box-shadow: 0 0 20px color-mix(in srgb, var(--color-violet) 25%, transparent),
-    0 0 60px color-mix(in srgb, var(--color-violet) 10%, transparent);
+.glow-blue {
+  box-shadow: 0 0 20px color-mix(in srgb, var(--color-blue) 25%, transparent),
+    0 0 60px color-mix(in srgb, var(--color-blue) 10%, transparent);
 }
 
-.glow-violet-sm {
-  box-shadow: 0 0 10px color-mix(in srgb, var(--color-violet) 20%, transparent),
-    0 0 30px color-mix(in srgb, var(--color-violet) 8%, transparent);
+.glow-blue-sm {
+  box-shadow: 0 0 10px color-mix(in srgb, var(--color-blue) 20%, transparent),
+    0 0 30px color-mix(in srgb, var(--color-blue) 8%, transparent);
 }
 
 .text-gradient {
-  background: linear-gradient(135deg, var(--color-violet-light), var(--color-violet), var(--color-text));
+  background: linear-gradient(135deg, var(--color-blue-light), var(--color-blue), var(--color-text));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -99,13 +100,13 @@ body {
 }
 
 /* Pulse animation for live indicators */
-@keyframes pulse-violet {
+@keyframes pulse-blue {
   0%, 100% { opacity: 1; }
   50% { opacity: 0.4; }
 }
 
-.animate-pulse-violet {
-  animation: pulse-violet 2s ease-in-out infinite;
+.animate-pulse-blue {
+  animation: pulse-blue 2s ease-in-out infinite;
 }
 
 /* Fade in animation */
@@ -141,7 +142,7 @@ body {
 
 .cursor-blink::after {
   content: "\2588";
-  color: var(--color-violet);
+  color: var(--color-blue);
   animation: blink 1s step-end infinite;
 }
 
@@ -160,8 +161,8 @@ body {
 
 .mcpx-hero-grid-upright {
   background-image:
-    linear-gradient(color-mix(in srgb, var(--color-violet) 12%, transparent) 1px, transparent 1px),
-    linear-gradient(90deg, color-mix(in srgb, var(--color-violet) 10%, transparent) 1px, transparent 1px);
+    linear-gradient(color-mix(in srgb, var(--color-blue) 12%, transparent) 1px, transparent 1px),
+    linear-gradient(90deg, color-mix(in srgb, var(--color-blue) 10%, transparent) 1px, transparent 1px);
   background-size: 72px 72px;
   mask-image: radial-gradient(ellipse 82% 60% at 50% 30%, #000 24%, transparent 80%);
   opacity: 0.22;
@@ -170,7 +171,7 @@ body {
 .mcpx-hero-grid-plane {
   background:
     linear-gradient(to bottom, transparent 0%, color-mix(in srgb, var(--color-bg) 86%, transparent) 72%),
-    repeating-linear-gradient(90deg, color-mix(in srgb, var(--color-violet) 14%, transparent) 0 1px, transparent 1px 90px);
+    repeating-linear-gradient(90deg, color-mix(in srgb, var(--color-blue) 14%, transparent) 0 1px, transparent 1px 90px);
   transform: perspective(520px) rotateX(62deg) translateY(32%);
   transform-origin: bottom center;
   opacity: 0.4;
@@ -183,34 +184,34 @@ body {
 }
 
 .mcpx-hero-title {
-  text-shadow: 0 0 28px color-mix(in srgb, var(--color-violet) 18%, transparent);
+  text-shadow: 0 0 28px color-mix(in srgb, var(--color-blue) 18%, transparent);
 }
 
 .mcpx-primary-cta {
-  background: var(--color-violet);
+  background: var(--color-blue);
   box-shadow:
-    0 0 22px color-mix(in srgb, var(--color-violet) 45%, transparent),
-    0 0 64px color-mix(in srgb, var(--color-violet) 22%, transparent);
+    0 0 22px color-mix(in srgb, var(--color-blue) 45%, transparent),
+    0 0 64px color-mix(in srgb, var(--color-blue) 22%, transparent);
   transition: background-color 160ms ease, box-shadow 160ms ease;
 }
 
 .mcpx-primary-cta:hover {
-  background: var(--color-violet-light);
+  background: var(--color-blue-light);
   box-shadow:
-    0 0 32px color-mix(in srgb, var(--color-violet-light) 60%, transparent),
-    0 0 92px color-mix(in srgb, var(--color-violet) 36%, transparent);
+    0 0 32px color-mix(in srgb, var(--color-blue-light) 60%, transparent),
+    0 0 92px color-mix(in srgb, var(--color-blue) 36%, transparent);
 }
 
 /* ── dot-peen mark + RGB-split glitch ──────────────────────────────────
    The mark renders three identical dot layers — a cyan ghost, a red ghost,
-   and the solid violet base. At rest only the base shows; in short bursts
+   and the solid blue base. At rest only the base shows; in short bursts
    the ghosts flare and offset to read as an RGB-split pin-stamp glitch.
    Shared with brw / DonWorks; only the base colour differs per brand. */
 .peen {
   display: block;
   width: 100%;
   height: auto;
-  filter: drop-shadow(0 0 26px color-mix(in srgb, var(--color-violet) 26%, transparent));
+  filter: drop-shadow(0 0 26px color-mix(in srgb, var(--color-blue) 26%, transparent));
 }
 
 .peen .base {
@@ -336,7 +337,7 @@ body {
   left: -0.05em;
   right: -0.05em;
   height: 0.12em;
-  background: var(--color-violet);
+  background: var(--color-blue);
   opacity: 0.6;
   transform: skewX(-6deg);
 }
@@ -369,7 +370,7 @@ body {
   letter-spacing: -0.01em;
   margin-top: 2rem;
   margin-bottom: 0.5rem;
-  color: var(--color-violet);
+  color: var(--color-blue);
   scroll-margin-top: 5rem;
 }
 
@@ -386,9 +387,9 @@ body {
 .post-prose code {
   font-family: var(--font-mono);
   font-size: 0.825em;
-  color: var(--color-violet);
-  background: rgba(160, 108, 255, 0.06);
-  border: 1px solid rgba(160, 108, 255, 0.12);
+  color: var(--color-blue);
+  background: rgba(59, 130, 246, 0.06);
+  border: 1px solid rgba(59, 130, 246, 0.12);
   padding: 0.1em 0.4em;
   border-radius: 0;
 }
@@ -437,21 +438,21 @@ body {
 }
 
 .post-prose a {
-  color: var(--color-violet);
+  color: var(--color-blue);
   text-decoration: underline;
   text-decoration-thickness: 1px;
   text-underline-offset: 0.2em;
-  text-decoration-color: rgba(160, 108, 255, 0.4);
+  text-decoration-color: rgba(59, 130, 246, 0.4);
   transition: color 0.15s, text-decoration-color 0.15s;
 }
 
 .post-prose a:hover {
-  color: var(--color-violet-light);
-  text-decoration-color: var(--color-violet);
+  color: var(--color-blue-light);
+  text-decoration-color: var(--color-blue);
 }
 
 .post-prose blockquote {
-  border-left: 2px solid var(--color-violet);
+  border-left: 2px solid var(--color-blue);
   padding-left: 1rem;
   color: var(--color-text-muted);
   font-style: italic;
