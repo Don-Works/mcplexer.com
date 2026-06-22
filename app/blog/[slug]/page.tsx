@@ -104,14 +104,14 @@ export default async function PostPage({ params }: { params: Params }) {
           <p className="text-xs font-mono uppercase tracking-wider text-text-muted mb-6">
             <Link
               href="/"
-              className="hover:text-cyan transition-colors"
+              className="hover:text-violet transition-colors"
             >
               Home
             </Link>{" "}
             /{" "}
             <Link
               href="/blog"
-              className="hover:text-cyan transition-colors"
+              className="hover:text-violet transition-colors"
             >
               Blog
             </Link>{" "}
@@ -160,7 +160,7 @@ export default async function PostPage({ params }: { params: Params }) {
                 href={post.authorUrl}
                 rel="author"
                 target="_blank"
-                className="text-cyan hover:text-cyan-light transition-colors"
+                className="text-violet hover:text-violet-light transition-colors"
                 itemProp="url"
               >
                 <span itemProp="name">{post.authorName}</span>
@@ -168,7 +168,7 @@ export default async function PostPage({ params }: { params: Params }) {
             </span>
             <Link
               href={`/blog/${post.slug}/raw.md`}
-              className="inline-flex items-center gap-1.5 text-cyan hover:text-cyan-light transition-colors"
+              className="inline-flex items-center gap-1.5 text-violet hover:text-violet-light transition-colors"
               title="Plain-text markdown source for LLMs"
             >
               <FileCode className="w-3 h-3" />
@@ -184,7 +184,7 @@ export default async function PostPage({ params }: { params: Params }) {
         <footer className="mt-16 pt-8 border-t border-border flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
           <Link
             href="/blog"
-            className="inline-flex items-center gap-1.5 text-xs text-text-muted hover:text-cyan transition-colors"
+            className="inline-flex items-center gap-1.5 text-xs text-text-muted hover:text-violet transition-colors"
           >
             <ArrowLeft className="w-3 h-3" />
             All posts
@@ -193,7 +193,7 @@ export default async function PostPage({ params }: { params: Params }) {
             href={config.githubUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="group inline-flex items-center gap-1.5 px-4 py-2 text-xs bg-cyan/10 text-cyan border border-cyan/20 hover:bg-cyan/20 transition-colors"
+            className="group inline-flex items-center gap-1.5 px-4 py-2 text-xs bg-violet/10 text-violet border border-violet/20 hover:bg-violet/20 transition-colors"
           >
             View source
             <ArrowRight className="w-3 h-3 transition-transform group-hover:translate-x-0.5" />

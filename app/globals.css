@@ -1,27 +1,30 @@
 @import "tailwindcss";
 
 @theme {
-  --color-bg: #0a0b10;
-  --color-bg-alt: #07080c;
-  --color-surface: #12131a;
-  --color-surface-hover: #1a1b24;
-  --color-surface-elevated: #1e1f2a;
-  --color-border: #1e2030;
-  --color-border-hover: #2a2d42;
+  --color-bg: #0a0810;
+  --color-bg-alt: #07060c;
+  --color-surface: #14101e;
+  --color-surface-hover: #1a1528;
+  --color-surface-elevated: #1e1830;
+  --color-border: #251f3a;
+  --color-border-hover: #3a2f5c;
 
-  --color-text: #e0e4ef;
-  --color-text-muted: #8b90a0;
-  --color-text-dim: #5a5f72;
+  --color-text: #e7e3f2;
+  --color-text-muted: #9b93b3;
+  --color-text-dim: #645c7e;
 
-  --color-cyan: #2ea4e0;
-  --color-cyan-light: #5bbdee;
-  --color-cyan-dark: #1a7ab5;
+  /* mcplexer brand — violet (~275° on the dot-peen family wheel:
+     DonWorks lime ~75°, brw cyan ~190°, mcplexer violet ~275°) */
+  --color-violet: #a06cff;
+  --color-violet-light: #c0a0ff;
+  --color-violet-dark: #7d4fe0;
+
+  /* shared dot-peen glitch ghosts (cyan + red), same family as brw / DonWorks */
+  --color-cyan: #19e6ff;
+  --color-red: #ff3147;
 
   --color-green: #2dd4a0;
-  --color-red: #ef4444;
   --color-amber: #f59e0b;
-  --color-gold: #ffc53d;
-  --color-gold-light: #ffd76e;
 
   --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
 }
@@ -43,23 +46,23 @@ body {
 }
 
 ::selection {
-  background: var(--color-cyan);
+  background: var(--color-violet);
   color: var(--color-bg);
 }
 
 /* Glow utility */
-.glow-cyan {
-  box-shadow: 0 0 20px color-mix(in srgb, var(--color-cyan) 25%, transparent),
-    0 0 60px color-mix(in srgb, var(--color-cyan) 10%, transparent);
+.glow-violet {
+  box-shadow: 0 0 20px color-mix(in srgb, var(--color-violet) 25%, transparent),
+    0 0 60px color-mix(in srgb, var(--color-violet) 10%, transparent);
 }
 
-.glow-cyan-sm {
-  box-shadow: 0 0 10px color-mix(in srgb, var(--color-cyan) 20%, transparent),
-    0 0 30px color-mix(in srgb, var(--color-cyan) 8%, transparent);
+.glow-violet-sm {
+  box-shadow: 0 0 10px color-mix(in srgb, var(--color-violet) 20%, transparent),
+    0 0 30px color-mix(in srgb, var(--color-violet) 8%, transparent);
 }
 
 .text-gradient {
-  background: linear-gradient(135deg, var(--color-cyan-light), var(--color-cyan), var(--color-text));
+  background: linear-gradient(135deg, var(--color-violet-light), var(--color-violet), var(--color-text));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -96,13 +99,13 @@ body {
 }
 
 /* Pulse animation for live indicators */
-@keyframes pulse-cyan {
+@keyframes pulse-violet {
   0%, 100% { opacity: 1; }
   50% { opacity: 0.4; }
 }
 
-.animate-pulse-cyan {
-  animation: pulse-cyan 2s ease-in-out infinite;
+.animate-pulse-violet {
+  animation: pulse-violet 2s ease-in-out infinite;
 }
 
 /* Fade in animation */
@@ -138,21 +141,11 @@ body {
 
 .cursor-blink::after {
   content: "\2588";
-  color: var(--color-cyan);
+  color: var(--color-violet);
   animation: blink 1s step-end infinite;
 }
 
-/* Hero name treatment */
-.hero-name {
-  font-size: clamp(4rem, 14vw, 11rem);
-  font-weight: 800;
-  line-height: 0.9;
-  letter-spacing: 0;
-  color: var(--color-text);
-  position: relative;
-  display: inline-block;
-  animation: glitch-base 5s infinite linear;
-}
+/* ── Hero ──────────────────────────────────────────────────────────── */
 
 .mcpx-hero {
   isolation: isolate;
@@ -167,97 +160,118 @@ body {
 
 .mcpx-hero-grid-upright {
   background-image:
-    linear-gradient(color-mix(in srgb, var(--color-cyan) 12%, transparent) 1px, transparent 1px),
-    linear-gradient(90deg, color-mix(in srgb, var(--color-cyan) 10%, transparent) 1px, transparent 1px);
+    linear-gradient(color-mix(in srgb, var(--color-violet) 12%, transparent) 1px, transparent 1px),
+    linear-gradient(90deg, color-mix(in srgb, var(--color-violet) 10%, transparent) 1px, transparent 1px);
   background-size: 72px 72px;
-  opacity: 0.18;
+  mask-image: radial-gradient(ellipse 82% 60% at 50% 30%, #000 24%, transparent 80%);
+  opacity: 0.22;
 }
 
 .mcpx-hero-grid-plane {
   background:
     linear-gradient(to bottom, transparent 0%, color-mix(in srgb, var(--color-bg) 86%, transparent) 72%),
-    repeating-linear-gradient(90deg, color-mix(in srgb, var(--color-cyan) 12%, transparent) 0 1px, transparent 1px 90px);
+    repeating-linear-gradient(90deg, color-mix(in srgb, var(--color-violet) 14%, transparent) 0 1px, transparent 1px 90px);
   transform: perspective(520px) rotateX(62deg) translateY(32%);
   transform-origin: bottom center;
-  opacity: 0.35;
+  opacity: 0.4;
+}
+
+/* the centred dot-peen wordmark sits at the heart of the hero */
+.mcpx-hero-mark {
+  width: min(680px, 90%);
+  margin: 0 auto;
 }
 
 .mcpx-hero-title {
-  text-shadow: 0 0 28px color-mix(in srgb, var(--color-cyan) 18%, transparent);
+  text-shadow: 0 0 28px color-mix(in srgb, var(--color-violet) 18%, transparent);
 }
 
 .mcpx-primary-cta {
-  background: var(--color-gold);
+  background: var(--color-violet);
   box-shadow:
-    0 0 22px color-mix(in srgb, var(--color-gold) 45%, transparent),
-    0 0 64px color-mix(in srgb, var(--color-gold) 22%, transparent);
+    0 0 22px color-mix(in srgb, var(--color-violet) 45%, transparent),
+    0 0 64px color-mix(in srgb, var(--color-violet) 22%, transparent);
   transition: background-color 160ms ease, box-shadow 160ms ease;
 }
 
 .mcpx-primary-cta:hover {
-  background: var(--color-gold-light);
+  background: var(--color-violet-light);
   box-shadow:
-    0 0 32px color-mix(in srgb, var(--color-gold-light) 60%, transparent),
-    0 0 92px color-mix(in srgb, var(--color-gold) 36%, transparent);
+    0 0 32px color-mix(in srgb, var(--color-violet-light) 60%, transparent),
+    0 0 92px color-mix(in srgb, var(--color-violet) 36%, transparent);
 }
 
-.hero-name::before {
-  content: attr(data-text);
-  position: absolute;
-  left: 0;
-  top: 0;
-  color: var(--color-cyan);
+/* ── dot-peen mark + RGB-split glitch ──────────────────────────────────
+   The mark renders three identical dot layers — a cyan ghost, a red ghost,
+   and the solid violet base. At rest only the base shows; in short bursts
+   the ghosts flare and offset to read as an RGB-split pin-stamp glitch.
+   Shared with brw / DonWorks; only the base colour differs per brand. */
+.peen {
+  display: block;
+  width: 100%;
+  height: auto;
+  filter: drop-shadow(0 0 26px color-mix(in srgb, var(--color-violet) 26%, transparent));
+}
+
+.peen .base {
+  animation: peen-jitter 3.7s steps(1) infinite;
+}
+
+.peen .gh {
+  mix-blend-mode: screen;
   opacity: 0;
-  z-index: -1;
-  animation: glitch-cyan 5s infinite steps(1);
 }
 
-.hero-name::after {
-  content: attr(data-text);
-  position: absolute;
-  left: 0;
-  top: 0;
-  color: var(--color-red);
-  opacity: 0;
-  z-index: -1;
-  animation: glitch-red 5s infinite steps(1);
+.peen .ghA {
+  animation: peen-ghost-a 3.7s steps(1) infinite;
 }
 
-/* Glitch fires at 0-16% of a 5s cycle = ~0.8s burst, fires immediately then every 5s */
-@keyframes glitch-base {
-  0% { transform: skewX(-2deg) translateX(-3px); }
-  2% { transform: skewX(1.5deg) translateX(2px); }
-  4% { transform: skewX(3deg) translateX(-4px); }
-  6% { transform: skewX(-2deg) translateX(3px); }
-  8% { transform: translateY(-2px) skewX(-1deg); }
-  10% { transform: translateY(3px) skewX(2deg) translateX(-2px); }
-  12% { transform: skewX(-1.5deg) translateX(4px); }
-  14% { transform: skewX(0.5deg); }
-  16%, 100% { transform: none; }
+.peen .ghB {
+  animation: peen-ghost-b 3.7s steps(1) infinite;
 }
 
-@keyframes glitch-cyan {
-  0% { opacity: 0.7; clip-path: inset(12% 0 73% 0); transform: translateX(5px) translateY(-1px); }
-  2% { opacity: 0.8; clip-path: inset(68% 0 7% 0); transform: translateX(-4px) translateY(2px); }
-  4% { opacity: 0.6; clip-path: inset(35% 0 42% 0); transform: translateX(6px); }
-  6% { opacity: 0.9; clip-path: inset(82% 0 2% 0); transform: translateX(-5px) translateY(-2px); }
-  8% { opacity: 0.7; clip-path: inset(5% 0 78% 0); transform: translateX(4px) translateY(1px); }
-  10% { opacity: 0.8; clip-path: inset(55% 0 25% 0); transform: translateX(-6px); }
-  12% { opacity: 0.6; clip-path: inset(20% 0 60% 0); transform: translateX(5px) translateY(2px); }
-  14% { opacity: 0.7; clip-path: inset(45% 0 35% 0); transform: translateX(-3px); }
-  16%, 100% { opacity: 0; }
+@keyframes peen-jitter {
+  0%, 18%, 21%, 49%, 52%, 77%, 100% { transform: translate(0, 0); }
+  19% { transform: translate(-2px, 1px); }
+  20% { transform: translate(2px, -1px); }
+  50% { transform: translate(3px, 0); }
+  51% { transform: translate(-1px, 2px); }
+  78% { transform: translate(-2px, -1px); }
+  79% { transform: translate(1px, 1px); }
 }
 
-@keyframes glitch-red {
-  0% { opacity: 0.5; clip-path: inset(58% 0 22% 0); transform: translateX(-5px) translateY(2px); }
-  2% { opacity: 0.6; clip-path: inset(18% 0 65% 0); transform: translateX(4px) translateY(-1px); }
-  4% { opacity: 0.4; clip-path: inset(72% 0 8% 0); transform: translateX(-6px); }
-  6% { opacity: 0.7; clip-path: inset(32% 0 48% 0); transform: translateX(5px) translateY(1px); }
-  8% { opacity: 0.5; clip-path: inset(88% 0 2% 0); transform: translateX(-4px) translateY(-2px); }
-  10% { opacity: 0.6; clip-path: inset(10% 0 75% 0); transform: translateX(3px); }
-  12% { opacity: 0.4; clip-path: inset(50% 0 30% 0); transform: translateX(-5px) translateY(2px); }
-  14% { opacity: 0.5; clip-path: inset(75% 0 10% 0); transform: translateX(4px); }
-  16%, 100% { opacity: 0; }
+@keyframes peen-ghost-a {
+  0%, 18%, 52%, 77%, 100% { opacity: 0; transform: translate(0, 0); clip-path: none; }
+  19% { opacity: 0.95; transform: translate(-7px, 2px); clip-path: inset(8% 0 62% 0); }
+  20% { opacity: 0.85; transform: translate(5px, -3px); clip-path: inset(55% 0 12% 0); }
+  21% { opacity: 0; transform: translate(0, 0); }
+  49% { opacity: 0.9; transform: translate(-9px, 1px); clip-path: inset(30% 0 34% 0); }
+  50% { opacity: 0.6; transform: translate(4px, 2px); }
+  51% { opacity: 0; }
+  78% { opacity: 0.8; transform: translate(-5px, -2px); clip-path: inset(70% 0 8% 0); }
+  79% { opacity: 0; }
+}
+
+@keyframes peen-ghost-b {
+  0%, 18%, 52%, 77%, 100% { opacity: 0; transform: translate(0, 0); clip-path: none; }
+  19% { opacity: 0.9; transform: translate(8px, -2px); clip-path: inset(40% 0 18% 0); }
+  20% { opacity: 0.7; transform: translate(-6px, 3px); clip-path: inset(10% 0 60% 0); }
+  21% { opacity: 0; }
+  49% { opacity: 0.85; transform: translate(9px, -1px); clip-path: inset(58% 0 14% 0); }
+  50% { opacity: 0.55; transform: translate(-4px, -2px); }
+  51% { opacity: 0; }
+  78% { opacity: 0.8; transform: translate(6px, 2px); clip-path: inset(12% 0 66% 0); }
+  79% { opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .peen .base,
+  .peen .gh {
+    animation: none !important;
+  }
+  .peen .gh {
+    opacity: 0;
+  }
 }
 
 /* Scanline overlay */
@@ -322,7 +336,7 @@ body {
   left: -0.05em;
   right: -0.05em;
   height: 0.12em;
-  background: var(--color-cyan);
+  background: var(--color-violet);
   opacity: 0.6;
   transform: skewX(-6deg);
 }
@@ -355,7 +369,7 @@ body {
   letter-spacing: -0.01em;
   margin-top: 2rem;
   margin-bottom: 0.5rem;
-  color: var(--color-cyan);
+  color: var(--color-violet);
   scroll-margin-top: 5rem;
 }
 
@@ -372,9 +386,9 @@ body {
 .post-prose code {
   font-family: var(--font-mono);
   font-size: 0.825em;
-  color: var(--color-cyan);
-  background: rgba(34, 211, 238, 0.06);
-  border: 1px solid rgba(34, 211, 238, 0.12);
+  color: var(--color-violet);
+  background: rgba(160, 108, 255, 0.06);
+  border: 1px solid rgba(160, 108, 255, 0.12);
   padding: 0.1em 0.4em;
   border-radius: 0;
 }
@@ -423,21 +437,21 @@ body {
 }
 
 .post-prose a {
-  color: var(--color-cyan);
+  color: var(--color-violet);
   text-decoration: underline;
   text-decoration-thickness: 1px;
   text-underline-offset: 0.2em;
-  text-decoration-color: rgba(34, 211, 238, 0.4);
+  text-decoration-color: rgba(160, 108, 255, 0.4);
   transition: color 0.15s, text-decoration-color 0.15s;
 }
 
 .post-prose a:hover {
-  color: var(--color-cyan-light);
-  text-decoration-color: var(--color-cyan);
+  color: var(--color-violet-light);
+  text-decoration-color: var(--color-violet);
 }
 
 .post-prose blockquote {
-  border-left: 2px solid var(--color-cyan);
+  border-left: 2px solid var(--color-violet);
   padding-left: 1rem;
   color: var(--color-text-muted);
   font-style: italic;

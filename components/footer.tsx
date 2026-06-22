@@ -10,7 +10,7 @@ export function Footer() {
         <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
           <div className="flex flex-col gap-1.5">
             <div className="flex items-center gap-2">
-              <McplexerLogo className="h-4 w-4 text-cyan" />
+              <McplexerLogo className="h-4 w-4 text-violet" />
               <span className="font-bold text-text text-sm">
                 {config.name}
               </span>
@@ -90,7 +90,7 @@ export function Footer() {
                 href={config.githubUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group flex items-center gap-1 text-cyan hover:text-cyan-light transition-colors"
+                className="group flex items-center gap-1 text-violet hover:text-violet-light transition-colors"
               >
                 Source Code
                 <ArrowRight className="w-3 h-3 transition-transform group-hover:translate-x-0.5" />
@@ -106,7 +106,7 @@ export function Footer() {
               href="https://donworks.co.uk"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-cyan hover:text-cyan-light transition-colors"
+              className="text-violet hover:text-violet-light transition-colors"
             >
               Don Works
             </Link>{" "}
@@ -115,7 +115,7 @@ export function Footer() {
               href="https://revitt.co"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-cyan hover:text-cyan-light transition-colors"
+              className="text-violet hover:text-violet-light transition-colors"
             >
               Revitt
             </Link>

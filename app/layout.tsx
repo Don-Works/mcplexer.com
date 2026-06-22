@@ -36,20 +36,13 @@ export const metadata: Metadata = {
     url: SITE_URL,
     siteName: config.name,
     locale: "en_GB",
-    images: [
-      {
-        url: "/og.png",
-        width: 1600,
-        height: 900,
-        alt: `${config.name} — ${config.tagline}`,
-      },
-    ],
+    // og:image / twitter:image come from app/opengraph-image.png and
+    // app/twitter-image.png (file convention), so they apply site-wide.
   },
   twitter: {
     card: "summary_large_image",
     title: `${config.name} — ${config.tagline}`,
     description: config.description,
-    images: ["/og.png"],
   },
   robots: {
     index: true,
@@ -106,7 +99,7 @@ export default function RootLayout({
       <body className="font-mono antialiased">
         <a
           href="#main"
-          className="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[60] focus:bg-cyan focus:text-bg focus:px-4 focus:py-2 focus:text-sm"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[60] focus:bg-violet focus:text-bg focus:px-4 focus:py-2 focus:text-sm"
         >
           Skip to main content
         </a>

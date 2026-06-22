@@ -22,8 +22,8 @@ export function Header() {
       <div className="mx-auto flex h-14 max-w-6xl items-center justify-between px-4 sm:px-6">
         <Link href="/" className="flex items-center gap-2.5 group" aria-label={`${config.name} home`}>
           <span className="relative flex items-center justify-center">
-            <McplexerLogo className="relative z-10 h-5 w-5 text-cyan" />
-            <span className="absolute inset-0 bg-cyan/20 blur-md group-hover:bg-cyan/30 transition-colors" />
+            <McplexerLogo className="relative z-10 h-5 w-5 text-violet" />
+            <span className="absolute inset-0 bg-violet/20 blur-md group-hover:bg-violet/30 transition-colors" />
           </span>
           <span className="font-bold text-text text-sm uppercase">
             MCPLEXER
@@ -45,7 +45,7 @@ export function Header() {
             href={config.githubUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="ml-2 group flex items-center gap-1.5 px-3 py-1.5 text-xs bg-cyan/10 text-cyan border border-cyan/20 hover:bg-cyan/20 transition-colors"
+            className="ml-2 group flex items-center gap-1.5 px-3 py-1.5 text-xs bg-violet/10 text-violet border border-violet/20 hover:bg-violet/20 transition-colors"
           >
             GitHub
             <ArrowRight className="w-3 h-3 transition-transform group-hover:translate-x-0.5" />
@@ -85,7 +85,7 @@ export function Header() {
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => setMobileOpen(false)}
-              className="mt-1 px-3 py-2 text-sm bg-cyan/10 text-cyan border border-cyan/20 text-center"
+              className="mt-1 px-3 py-2 text-sm bg-violet/10 text-violet border border-violet/20 text-center"
             >
               GitHub
             </Link>
