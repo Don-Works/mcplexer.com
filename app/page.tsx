@@ -41,7 +41,8 @@ type Feature = {
   label: string;
 };
 
-const BRW_URL = "https://brw.donworks.co.uk";
+const BRW_URL =
+  "https://brw.donworks.co.uk/?utm_source=mcplexer.com&utm_medium=referral&utm_campaign=mcplexer_open_source";
 
 const statusItems = [
   "Delegation ledger and worker review loop live",

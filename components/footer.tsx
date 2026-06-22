@@ -63,7 +63,7 @@ export function Footer() {
                 Project
               </span>
               <Link
-                href="https://donworks.co.uk"
+                href="https://donworks.co.uk/?utm_source=mcplexer.com&utm_medium=referral&utm_campaign=mcplexer_open_source"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-text-dim hover:text-text transition-colors"
@@ -71,7 +71,7 @@ export function Footer() {
                 Don Works
               </Link>
               <Link
-                href="https://revitt.co"
+                href="https://revitt.co/?utm_source=mcplexer.com&utm_medium=referral&utm_campaign=mcplexer_open_source"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-text-dim hover:text-text transition-colors"
@@ -103,7 +103,7 @@ export function Footer() {
           <span>&copy; 2026 Don Works. All rights reserved.</span>
           <span>
             <Link
-              href="https://donworks.co.uk"
+              href="https://donworks.co.uk/?utm_source=mcplexer.com&utm_medium=referral&utm_campaign=mcplexer_open_source"
               target="_blank"
               rel="noopener noreferrer"
               className="text-blue hover:text-blue-light transition-colors"
@@ -112,7 +112,7 @@ export function Footer() {
             </Link>{" "}
             — made by{" "}
             <Link
-              href="https://revitt.co"
+              href="https://revitt.co/?utm_source=mcplexer.com&utm_medium=referral&utm_campaign=mcplexer_open_source"
               target="_blank"
               rel="noopener noreferrer"
               className="text-blue hover:text-blue-light transition-colors"
