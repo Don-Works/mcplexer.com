@@ -41,6 +41,8 @@ type Feature = {
   label: string;
 };
 
+const BRW_URL = "https://brw.donworks.co.uk";
+
 const statusItems = [
   "Delegation ledger and worker review loop live",
   "AI-first tasks, memory, mesh, and skills wired",
@@ -402,11 +404,29 @@ export default function HomePage() {
                 Beats Claude Chrome because it is a shared runtime capability.
               </h2>
               <p className="mt-4 text-sm leading-relaxed text-text-muted">
-                A browser tied to one chat helps that chat. MCPlexer exposes
-                browser control as routed infrastructure, so the capability can
-                be used by any harness, by durable workers, and by paired
-                machines while still being auditable.
+                A browser tied to one chat helps that chat. MCPlexer achieves
+                browser control with{" "}
+                <a
+                  href={BRW_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-semibold text-blue underline decoration-blue/40 underline-offset-2 transition-colors hover:text-blue-light"
+                >
+                  brw
+                </a>{" "}
+                — a real, visible Chrome window for agents — exposed as routed
+                infrastructure, so the capability works across any harness,
+                durable workers, and paired machines while staying auditable.
               </p>
+              <a
+                href={BRW_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-5 inline-flex items-center gap-2 border border-blue/30 px-4 py-2 text-sm text-blue transition-colors hover:bg-blue/5"
+              >
+                Explore brw
+                <ArrowRight className="h-4 w-4" />
+              </a>
             </div>
             <div className="border border-border bg-surface p-6">
               <ul className="space-y-3">
@@ -442,7 +462,7 @@ export default function HomePage() {
                     item === "brw" ? (
                       <a
                         key={item}
-                        href="https://github.com/Don-Works/brw"
+                        href={BRW_URL}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="border border-blue/20 bg-blue/5 px-2.5 py-1 text-xs text-blue transition-colors hover:border-[#ff2ec4]/50 hover:text-[#ff2ec4]"
