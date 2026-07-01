@@ -14,7 +14,7 @@ const navLinks = [
   { href: "/blog", label: "Blog" },
 ];
 
-export function Header() {
+export function Header({ latestVersion }: { latestVersion?: string | null }) {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   return (
@@ -41,6 +41,17 @@ export function Header() {
               {link.label}
             </Link>
           ))}
+          {latestVersion && (
+            <Link
+              href={`${config.githubUrl}/releases/latest`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="ml-2 inline-flex items-center px-2 py-1.5 text-xs font-medium text-text-muted hover:text-text border border-border transition-colors"
+              title={`Latest release ${latestVersion}`}
+            >
+              {latestVersion}
+            </Link>
+          )}
           <Link
             href={config.githubUrl}
             target="_blank"
@@ -80,6 +91,17 @@ export function Header() {
                 {link.label}
               </Link>
             ))}
+            {latestVersion && (
+              <Link
+                href={`${config.githubUrl}/releases/latest`}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => setMobileOpen(false)}
+                className="mt-1 px-3 py-2 text-sm text-text-muted hover:text-text border border-border text-center"
+              >
+                Latest release {latestVersion}
+              </Link>
+            )}
             <Link
               href={config.githubUrl}
               target="_blank"

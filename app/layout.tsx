@@ -6,6 +6,7 @@ import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { JsonLd } from "@/components/json-ld";
 import { SITE_URL } from "@/lib/seo";
+import { getLatestVersion } from "@/lib/version";
 import "./globals.css";
 
 const jetbrainsMono = JetBrains_Mono({
@@ -57,11 +58,13 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  // Latest release tag, resolved from GitHub at request time (ISR-cached).
+  const latestVersion = await getLatestVersion();
   // Site-wide JSON-LD: an Organization (Don Works) and a WebSite. Per-page
   // JSON-LD (BlogPosting, BreadcrumbList, SoftwareApplication, FAQPage) is
   // injected by the individual page components.
@@ -103,7 +106,7 @@ export default function RootLayout({
         >
           Skip to main content
         </a>
-        <Header />
+        <Header latestVersion={latestVersion} />
         <main id="main">{children}</main>
         <Footer />
         <Analytics />
